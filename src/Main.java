@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -6,11 +5,10 @@ import java.util.stream.IntStream;
 public class Main {
 
     public static void main(String[] args) {
-        List<Integer> nums = new ArrayList<>();
-
-        IntStream
+        List<Integer> nums = IntStream
                 .range(2, 101)
-                        .forEach(nums::add);
+                .boxed()
+                .collect(Collectors.toList());
 
         System.out.println(howManyPrimes(nums));
 
