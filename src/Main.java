@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
         List<Integer> nums = IntStream
-                .range(1, 101)
+                .range(2, 101)
                 .boxed()
                 .collect(Collectors.toList());
 
@@ -17,8 +17,7 @@ public class Main {
     public static List<Integer> howManyPrimes(List<Integer> nums) {
         return nums
                 .stream()
-                .filter(n -> n != 1 && (n % 2 != 0 || n == 2))
-                .filter(n -> IntStream.range(2, n - 1)
+                .filter(n -> IntStream.range(2, n)
                         .allMatch(i -> n % i != 0))
                 .collect(Collectors.toList());
     }
