@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
         List<Integer> nums = IntStream
-                .range(2, 101)
+                .range(1, 101)
                 .boxed()
                 .collect(Collectors.toList());
 
